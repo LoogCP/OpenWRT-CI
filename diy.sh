@@ -7,7 +7,7 @@
 #WRT_BRANCH='main'
 
 WRT_REPO='https://github.com/VIKINGYFY/immortalwrt'
-WRT_BRANCH='main'
+WRT_BRANCH='owrt'
 
 if [ -n "$1" ]; then
     # 如果有传递参数，赋值给WRT_TARGET
@@ -27,11 +27,11 @@ export GITHUB_WORKSPACE=$(pwd)
 export WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
 export WRT_VER=$(echo $WRT_REPO | cut -d '/' -f 5-)-$WRT_BRANCH
 export WRT_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt)
-export WRT_NAME='OWRT'
+export WRT_NAME='ImmortalWrt'
 export WRT_SSID='OWRT'
 export WRT_WORD='12345678'
 export WRT_THEME='argon'
-export WRT_IP='192.168.10.1'
+export WRT_IP='10.10.1.1'
 export WRT_CI='WSL-OpenWRT-CI'
 export WRT_ARCH=$(sed -n 's/.*_DEVICE_\(.*\)_DEVICE_.*/\1/p' $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt | head -n 1)
 export CI_NAME='QCA-6.12-LiBwrt'
